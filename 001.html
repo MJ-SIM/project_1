@@ -28,10 +28,8 @@
     </style>
   </head>
   <body>
-    <header>
-      <h1>MJ PROJECT</h1>
-    </header>
     <div>
+      <ul></ul>
       <form>
         <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" />
         <select id="mealType" required>
@@ -48,6 +46,8 @@
         </select>
         <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
         <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus  />
+        <button id="kcalBtn" onclick="kcalCalculate">칼로리 계산</button>
+        <div id="caloriesResult"></div>
         <button class="btn1" type="submit">전송</button>
       </form>
       <div id="answerTableContainer"></div>
@@ -59,6 +59,7 @@
       const $mealTypeSelect2 = document.querySelector("#mealType2");
       const $kcalInput = document.querySelector("#kcal");
       const $signInput = document.querySelector('#sign')
+      const $chatList = document.querySelector("ul");
       const $answerTableContainer = document.querySelector("#answerTableContainer");
 
       // openAI API
@@ -173,6 +174,9 @@
   }
 };
 
+//칼로리 계산
+
+
 function LoadingWithMask() {
   // 화면의 높이와 너비를 구합니다.
   var maskHeight = Math.max(
@@ -205,18 +209,9 @@ function LoadingWithMask() {
   loadingImg.innerHTML =
     "<img src='LoadingImg.gif' style='position: relative; display: block; margin: 0px auto;'/>";
 
-  var loadingTxt = document.createElement('div');loadingTxt.id = 'loadingTxt';
-  loadingTxt.innerHTML='입력하신 정보로 식단을 작성중 입니다';
-  loadingTxt.style.color = 'gray'
-  loadingTxt.style.fontSize = '20px'
-  loadingTxt.style.textAlign = 'center'
-
-
-
   // 화면에 레이어 추가
   document.body.appendChild(mask);
   document.body.appendChild(loadingImg);
-  document.body.appendChild(loadingTxt);
 
   // 마스크의 높이와 너비를 화면에 맞춰 전체 화면을 채웁니다.
   mask.style.width = maskWidth + 'px';
@@ -228,23 +223,54 @@ function LoadingWithMask() {
 
   // 로딩중 이미지 표시
   loadingImg.style.display = 'block';
-  loadingTxt.style.display = 'block';
 }
 
 function closeLoadingWithMask() {
             var mask = document.getElementById('mask');
             var loadingImg = document.getElementById('loadingImg');
-            var loadingTxt = document.getElementById('loadingTxt');
 
-            if (mask && loadingImg && loadingTxt) {
+            if (mask && loadingImg) {
               mask.style.display = 'none';
               loadingImg.style.display = 'none';
-              loadingTxt.style.display = 'none';
+
               mask.parentNode.removeChild(mask);
               loadingImg.parentNode.removeChild(loadingImg);
-              loadingTxt.parentNode.removeChild(loadingTxt);
             }
           }
+
+          const calculateCalories = async () => {
+  const table = document.querySelector("table");
+  const rows = table.getElementsByTagName("tr");
+
+  const meals = [];
+  for (let i = 1; i < rows.length; i++) {
+    const cells = rows[i].getElementsByTagName("td");
+    const mealType = cells[0].textContent.trim();
+    const menu = cells[1].textContent.trim();
+    meals.push({ mealType, menu });
+  }
+
+  const data = [
+    {
+      role: "user",
+      content: JSON.stringify(meals),
+    },
+  ];
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+  const caloriesResult = document.querySelector("#caloriesResult");
+  caloriesResult.textContent = result.choices[0].message.content;
+};
+
+
 
       // api 요청보내는 함수
       const apiPost = async (data) => {
