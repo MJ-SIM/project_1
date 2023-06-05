@@ -9,13 +9,15 @@
       table {
         border-collapse: collapse;
         width: 100%;
+
       }
 
       th,
       td {
         padding: 8px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #d0598d;
+        display: flex;
       }
       mask{
         position: absolute;
@@ -28,8 +30,6 @@
     </style>
   </head>
   <body>
-    <div>
-      <ul></ul>
       <form>
         <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" />
         <select id="mealType" required>
@@ -46,12 +46,17 @@
         </select>
         <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
         <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus  />
-        <button id="kcalBtn" onclick="kcalCalculate">칼로리 계산</button>
-        <div id="caloriesResult"></div>
         <button class="btn1" type="submit">전송</button>
       </form>
       <div id="answerTableContainer"></div>
     </div>
+  <footer>
+    <address>
+      <a href="mailto: newzerto8@naver.com">newzerto8@naver.com</a>
+      <a href="tel:+8201012347895">010-1234-7895</a>
+    </address>
+    <small>Copyright Mj Corp, All right reserved.</small>
+  </footer>
     <script>
       const $form = document.querySelector("form");
       const $daysInput = document.querySelector("#days");
@@ -59,7 +64,6 @@
       const $mealTypeSelect2 = document.querySelector("#mealType2");
       const $kcalInput = document.querySelector("#kcal");
       const $signInput = document.querySelector('#sign')
-      const $chatList = document.querySelector("ul");
       const $answerTableContainer = document.querySelector("#answerTableContainer");
 
       // openAI API
@@ -78,20 +82,22 @@
         "content": "다이어트를 위한 3일치 아침 식단을 1000~1500kcal 범위에서 작성해줘"
         }, {
         "role": "assistant",
-        "content": "다음과 같은 형식으로 답변을 줘. 형식 : [1일차,['종류', '수량']*n,칼로리 합계], [2일차,['종류', '수량']*n,칼로리 합계],[3일차,['종류', '수량']*n,총 칼로리 합계]. 내가 질문을 하면 아래처럼 답변을 주어야 할거야. [1일차,['현미밥', '1공기'],['계란후라이', '2개'],['된장국', '1공기']['사과', '1/2개'],총400kcal], [2일차,['팬케이크', '2장'], ['베이컨', '2장'], ['스크램블에그', '200g'],총 580kcal],[3일차,['시리얼', '1보울'],['우유', '200ml'],['오렌지', '1개'],총 380kcal]"
-        },{
-        "role": "user",
-        "content": "식단작성을 1000~1500kcal범위에서 해줘"
-        }, {
-        "role": "assistant",
-        "content": "각각의 하루치 식단을 작성한 후 마지막에 한끼당 kcal의 총합을 출력해줘"
-        },{
-        "role": "user",
-        "content": "n일치 식단작성을 해줘"
-        }, {
-        "role": "assistant",
-        "content": "n>1일때 각각의 하루치 식단 작성 맨위에는 nDAY라고 붙여서 n일중 몇일차인지 알 수 있도록 해줘. 예를들면 user가 5일치 식단작성이라고 입력하면 너는 1일차[...] 2일차[...], 3일차[...], 4일차[...], 5일차[...] 이런식으로 user들이 알아보기 쉽도록 답변해줘."
+        "content": "다음과 같은 형식으로 답변을 줘. 형식 : [1DAY,['종류', '수량']*n,칼로리 합계], [2DAY,['종류', '수량']*n,칼로리 합계],[3DAY,['종류', '수량']*n,총 칼로리 합계]. 내가 질문을 하면 아래처럼 답변을 주어야 할거야. [1DAY,'현미밥 1공기','계란후라이 2개','된장국 1공기','사과 1/2개',총400kcal], [2DAY,'팬케이크 2장', '베이컨 2장', '스크램블에그 200g',총 580kcal],[3DAY,'시리얼 1보울','우유 200ml','오렌지 1개',총 380kcal] "
         }
+        // ,{
+        // "role": "user",
+        // "content": "n일치 식단작성을 해줘"
+        // }, {
+        // "role": "assistant",
+        // "content": "n>1일때 각각의 하루치 식단 작성 맨위에는 nDAY라고 붙여서 n일중 몇일차인지 알 수 있도록 해줘. 예를들면 user가 5일치 식단작성이라고 입력하면 너는 1일차[...] 2일차[...], 3일차[...], 4일차[...], 5일차[...] 이런식으로 user들이 알아보기 쉽도록 답변해줘."
+        // }
+        // ,{
+        // "role": "user",
+        // "content": "식단작성 해줘"
+        // }, {
+        // "role": "assistant",
+        // "content": "'식단'키워드가 들어오면 설명은 빼고 식단만 작성해줘"
+        // }
         
       ];
 
@@ -174,9 +180,6 @@
   }
 };
 
-//칼로리 계산
-
-
 function LoadingWithMask() {
   // 화면의 높이와 너비를 구합니다.
   var maskHeight = Math.max(
@@ -209,9 +212,18 @@ function LoadingWithMask() {
   loadingImg.innerHTML =
     "<img src='LoadingImg.gif' style='position: relative; display: block; margin: 0px auto;'/>";
 
+  var loadingTxt = document.createElement('div');loadingTxt.id = 'loadingTxt';
+  loadingTxt.innerHTML='입력하신 정보로 식단을 작성중 입니다';
+  loadingTxt.style.color = 'gray'
+  loadingTxt.style.fontSize = '20px'
+  loadingTxt.style.textAlign = 'center'
+
+
+
   // 화면에 레이어 추가
   document.body.appendChild(mask);
   document.body.appendChild(loadingImg);
+  document.body.appendChild(loadingTxt);
 
   // 마스크의 높이와 너비를 화면에 맞춰 전체 화면을 채웁니다.
   mask.style.width = maskWidth + 'px';
@@ -223,54 +235,23 @@ function LoadingWithMask() {
 
   // 로딩중 이미지 표시
   loadingImg.style.display = 'block';
+  loadingTxt.style.display = 'block';
 }
 
 function closeLoadingWithMask() {
             var mask = document.getElementById('mask');
             var loadingImg = document.getElementById('loadingImg');
+            var loadingTxt = document.getElementById('loadingTxt');
 
-            if (mask && loadingImg) {
+            if (mask && loadingImg && loadingTxt) {
               mask.style.display = 'none';
               loadingImg.style.display = 'none';
-
+              loadingTxt.style.display = 'none';
               mask.parentNode.removeChild(mask);
               loadingImg.parentNode.removeChild(loadingImg);
+              loadingTxt.parentNode.removeChild(loadingTxt);
             }
           }
-
-          const calculateCalories = async () => {
-  const table = document.querySelector("table");
-  const rows = table.getElementsByTagName("tr");
-
-  const meals = [];
-  for (let i = 1; i < rows.length; i++) {
-    const cells = rows[i].getElementsByTagName("td");
-    const mealType = cells[0].textContent.trim();
-    const menu = cells[1].textContent.trim();
-    meals.push({ mealType, menu });
-  }
-
-  const data = [
-    {
-      role: "user",
-      content: JSON.stringify(meals),
-    },
-  ];
-
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-
-  const result = await response.json();
-  const caloriesResult = document.querySelector("#caloriesResult");
-  caloriesResult.textContent = result.choices[0].message.content;
-};
-
-
 
       // api 요청보내는 함수
       const apiPost = async (data) => {
@@ -311,10 +292,12 @@ function closeLoadingWithMask() {
           $mealTypeSelect.value = "";
           $mealTypeSelect2.value = "";
 
-          question = `식단표를 작성할거야. ${mealType2}를 위한 ${days}일치  ${mealType} 식단을 ${kcal}kcal 범위에서 짜줘 특이사항은 ${sign}이 있어`;
-          apiPost([{ role: "user", content: question }]);
+          question = ` ${mealType2}를 위한 ${days}일치  ${mealType} 식단을 ${kcal}kcal 범위에서 짜줘, 특이사항은 ${sign}이 있어, 내가 원하는 형태는 설명이 없고, 레시피가 아닌 식단으로만 구성된 형태야`;
+          data.push({ role: "user", content: question });
+          apiPost(data)
         }
       });
     </script>
+  
   </body>
 </html>
