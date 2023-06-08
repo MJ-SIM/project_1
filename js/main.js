@@ -1,4 +1,5 @@
-import{apiPost} from "./api.js"
+
+import{apiPost, url} from "./api.js"
 import{printAnswer, LoadingWithMask, closeLoadingWithMask } from "./func.js"
 
 window.onload = function(){
@@ -9,10 +10,9 @@ window.onload = function(){
     const $mealTypeSelect2 = document.querySelector("#mealType2");
     const $kcalInput = document.querySelector("#kcal");
     const $signInput = document.querySelector('#sign')
-    const $answerTableContainer = document.querySelector("#answerTableContainer");
+    
 
-    // openAI API
-let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+
 
     // 사용자의 질문
     let question;

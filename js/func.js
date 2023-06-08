@@ -1,3 +1,5 @@
+const $answerTableContainer = document.querySelector("#answerTableContainer");
+
 // 화면에 답변 그려주는 함수
     const printAnswer =(answer)=>{
         answer = answer.replace(/\([^)]*\)/g, ''); 

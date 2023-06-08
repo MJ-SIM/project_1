@@ -1,4 +1,8 @@
-import { printAnswer, LoadingWithMask, closeLoadingWithMask } from "./function.js";
+import { printAnswer, LoadingWithMask, closeLoadingWithMask } from "./func.js";
+
+// openAI API
+let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+
 // api 요청보내는 함수
 const apiPost = async (data) => {
     LoadingWithMask();
@@ -20,4 +24,4 @@ const apiPost = async (data) => {
         });
     };
 
-export {apiPost};
+export {apiPost, url};
