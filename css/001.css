@@ -1,20 +1,95 @@
 /* css 좀 더 공부하고 추가예정 */
-    table {
-    border-collapse: collapse;
-    width: 100%;
-    }
-    th,
-    td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #d0598d;
+
+body{
+    margin: 0;
+    font-family: 'Black Han Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.navbar{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(65, 13, 124, 0.348);
+    padding: 8px 12px;
+}
+.navbar-logo{
+    font-size: 25px;
+    color: white;
+    font-family: 'Bagel Fat One', sans-serif;
+}
+
+.navbar-logo i{
+    color: rgb(114, 23, 183);
+}
+
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    font-family: 'Bagel Fat One', sans-serif;
+}
+
+.navbar-menu li{
+    padding: 8px 12px;
+}
+
+.navbar-menu li:hover{
+    background-color: rgba(236, 214, 241, 0.548);
+    border-radius: 6px;
+}
+
+.navbar-icons{
+    list-style: none;
+    display: flex;
+    color: white;
+    padding-left: 0;
+}
+
+.navbar-icons li{
+    padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
     }
-    mask{
-    position: absolute;
-    z-index: 9000;
-    background-color: #000;
-    display: none;
-    left: 0;
-    top: 0;
+    .navbar-menu{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
+    .navbar-menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-icons{
+        justify-content: center;
+        width: 100%;
+    }
+}
+/* 테이블 출력 */
+.table {
+border-collapse: collapse;
+width: 100%;
+}
+.th,
+td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #d0598d;
+display: flex;
+}
+/* 로딩중 */
+.mask{
+position: absolute;
+z-index: 9000;
+background-color: #000;
+display: none;
+left: 0;
+top: 0;
+}

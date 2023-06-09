@@ -6,25 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>chat</title>
     <link rel="stylesheet" href="css/001.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
   </head>
   <script src="js/api.js" type="module"></script>
   <script src="js/func.js" type="module"></script>
-  <script src="js/main.js" type="module"></script>  
-  
+  <script src="js/main.js" type="module"></script> 
+  <script src="https://kit.fontawesome.com/24d170106e.js" crossorigin="anonymous"></script>
   
   <body>
     <header>
-      <h1>MJ PROJECT</h1>
-      <nav>
-        <ul>
-          <li>select</li>
-          <li>chart</li>
-          <li>menual</li>
+      <nav class="navbar">
+        <div class="navbar-logo">
+          <i class="fa-solid fa-utensils"></i>
+          <a href="">MJ PROJECT</a>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="">menual</a></li>
+          <li><a href="">select</a></li>
+          <li><a href="">chart</a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
         </ul>
+        <ul class="navbar-icons">
+          <li>
+            <label for="inp-search">검색어 입력</label>
+            <input id="inp-search" type="search">
+            <button>검색어 찾기</button>
+          </li>
+          <li><i class="fa-brands fa-blogger" style="color: #eddff1;"><a href="http://blog.naver.com/newzerto8"></a></i>
+          </li>
+          <li><i class="fa-brands fa-instagram" style="color: #f1dcf9;"></i>
+          </li>
+        </ul>
+        <a href="" class="navbar-toggleBtn"></a>
+        
       </nav>
-      <label for="inp-search">검색어 입력</label>
-      <input id="inp-search" type="search">
-      <button>검색어 찾기</button>
+
+        </div>
     </header>
     <main>
       <section>
@@ -104,5 +125,6 @@
     </address>
     <small>Copyright Mj Corp, All right reserved.</small>
   </footer>
+
   </body>
 </html>
