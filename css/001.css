@@ -1,12 +1,16 @@
 /* css 좀 더 공부하고 추가예정 */
-
+:root{
+    --text-color: #f0f4f5;
+    --background-color: rgb(114, 23, 183);
+    --accent-color: rgba(65, 13, 124, 0.348);
+}
 body{
     margin: 0;
     font-family: 'Black Han Sans', sans-serif;
 }
 a{
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 .navbar{
     display: flex;
@@ -14,15 +18,16 @@ a{
     align-items: center;
     background-color: rgba(65, 13, 124, 0.348);
     padding: 8px 12px;
+    border-radius: 0px 0px 8px 8px;
 }
 .navbar-logo{
     font-size: 25px;
-    color: white;
+    color: var(--text-color);
     font-family: 'Bagel Fat One', sans-serif;
 }
 
 .navbar-logo i{
-    color: rgb(114, 23, 183);
+    color: var(--background-color)
 }
 
 .navbar-menu{
@@ -44,7 +49,7 @@ a{
 .navbar-icons{
     list-style: none;
     display: flex;
-    color: white;
+    color: var(--text-color);
     padding-left: 0;
 }
 
@@ -59,6 +64,7 @@ a{
     font-size: 24px;
     color: rgba(65, 13, 124, 0.78);
 }
+
 
 @media screen and (max-width: 768px) {
     .navbar{
@@ -91,7 +97,29 @@ a{
     }
 }
 
+.section-one{
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(/img/ddd.jpg)
 
+}
+
+.section-one-h2{
+    font-size: 80px;
+    font-family: 'Bagel Fat One', sans-serif;  
+    color: var(--background-color)
+}
+
+@media(min-width) {
+    
+}
+
+.main-section-one{
+    text-align: center;
+}
 /* 테이블 출력 */
 .table {
 border-collapse: collapse;
