@@ -18,6 +18,8 @@
   <script src="js/main.js" type="module"></script> 
   <script src="https://kit.fontawesome.com/24d170106e.js" crossorigin="anonymous"></script>
   <script src="js/nav.js" defer></script>
+  <script src="js/icon.js"></script>
+
   
   <body>
 
@@ -28,10 +30,10 @@
           <a href="">MJ PROJECT</a>
         </div>
         <ul class="navbar-menu">
-          <li><a href="#history">history</a></li>
-          <li><a href="">menual</a></li>
-          <li><a href="">recommend</a></li>
-          <li><a href="">chart</a></li>
+          <li><a class="menu-link" href="#history">history</a></li>
+          <li><a class="menu-link" href="#menual">menual</a></li>
+          <li><a class="menu-link" href="#recommend">recommend</a></li>
+          <li><a class="menu-link" href="#chart">chart</a></li>
         </ul>
         <ul class="navbar-icons">
           <li>
@@ -39,9 +41,9 @@
             <input id="inp-search" type="search">
             <button>검색어 찾기</button>
           </li>
-          <li><i class="fa-brands fa-blogger" style="color: #eddff1;"></i>
+          <li><a href="#" id="myIcon1"><i class="fab fa-blogger" style="color: #eddff1;"></i></a>
           </li>
-          <li><i class="fa-brands fa-instagram" style="color: #f1dcf9;"></i>
+          <li><a href="#" id="myIcon2"><i class="fab fa-instagram" style="color: #f1dcf9;"></i></a>
           </li>
         </ul>
             <a href="#" class="navbar-toggleBtn">
@@ -52,13 +54,13 @@
       <header>
         <section class="section-one">
           <div class="container">
-            <h2 class="section-one-h2">모두의 식단</h2>
+            <h2 class="section-one-h2">Meal Planner</h2>
             <strong>hello world</strong>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex natus asperiores quod rerum adipisci nisi voluptas eveniet qui suscipit ducimus, deleniti, repellat officia voluptatibus quam? Consectetur possimus dicta earum obcaecati?</p>
             <button type="button">회원가입</button>
             <button type="button">로그인</button>
             <aside>
-              <a href="">블로그 방문하기</a>
+              <a href="https://m.blog.naver.com/kyungm2001/221718705226">블로그 방문하기</a>
               <a href="">인스타그램 방문하기</a>
             </aside>
           </div>
@@ -66,14 +68,14 @@
       </header>
 <!-- main -->
     <main>
-      <section class="main-section">
+      <section id="history" class="main-section">
         <div class="container">
             <h2>history</h2>
             <h3 class="section-subheading">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
         </div>
       </section>
       <!-- menual -->
-      <section class="main-section">
+      <section id="menual" class="main-section">
         <div class="container">
           <h2 class="section-heading">menual</h2>
           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
@@ -131,12 +133,12 @@
         </div>
       </section>
       <!-- recommend -->
-        <section class="main-section">
+        <section id="recommend" class="main-section">
           <div class="container"></div>
             <h2 class="section-heading">recommend</h2>
               <div class="recommend-img">
                 <figure class="recommend-img-card">
-                  <img src="" alt="이미지 고민중">
+                  <img src="/img/99.28318404.1.jpg" alt="이미지 고민중">
                   <figcaption>
                     <strong>균형있는 식단을 실천해보아요</strong>
                     <p>하루 7잔 이상의 물을 드셨나요?</p>
@@ -153,7 +155,7 @@
             </div>
         </section>
         <!-- chart -->
-      <section class="main-section">
+      <section id="chart" class="main-section">
         <h2 class="section-heading">chart</h2>
         <h3>본격적인 식단 작성</h3>
       </section>
@@ -189,4 +191,5 @@
   </footer>
 
   </body>
+  
 </html>
