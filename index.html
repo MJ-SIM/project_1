@@ -19,12 +19,12 @@
   <script src="https://kit.fontawesome.com/24d170106e.js" crossorigin="anonymous"></script>
   <script src="js/nav.js" defer></script>
   <script src="js/icon.js"></script>
-
+  
   
   <body>
 
       <!-- navigation -->
-      <nav class="navbar">
+      <nav class="navbar" >
         <div class="navbar-logo">
           <i class="fa-solid fa-utensils"></i>
           <a href="">MJ PROJECT</a>
@@ -55,14 +55,15 @@
         <section class="section-one">
           <div class="container">
             <h2 class="section-one-h2">Meal Planner</h2>
-            <strong>hello world</strong>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex natus asperiores quod rerum adipisci nisi voluptas eveniet qui suscipit ducimus, deleniti, repellat officia voluptatibus quam? Consectetur possimus dicta earum obcaecati?</p>
-            <button type="button">회원가입</button>
+            <h3><strong>hello :) mj project</strong></h3>
+            <p>Are you ready to start a healthy meal plan?</p>
+            <p>I'll be your meal planner.</p>
+            <!-- <button type="button">회원가입</button>
             <button type="button">로그인</button>
             <aside>
               <a href="https://m.blog.naver.com/kyungm2001/221718705226">블로그 방문하기</a>
               <a href="">인스타그램 방문하기</a>
-            </aside>
+            </aside> -->
           </div>
         </section>
       </header>
@@ -71,14 +72,20 @@
       <section id="history" class="main-section">
         <div class="container">
             <h2>history</h2>
-            <h3 class="section-subheading">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+            <h3 class="section-subheading">Why is a healthy meal plan important?</h3>
+            <img src="/img/foodDish.png" alt="">
+            <p>건강한 식사는 모든 연령대의 사람에게 중요합니다. 어린이와 청소년은
+            성장과 신체발달을 위해 좋은 영양소를 섭취해야 합니다. 성인 역시 생애
+            기간 동안 건강을 좋게 유지하기 위해 잘 먹어야 합니다. 하지만, 현대의
+            라이프스타일은 건강한 식사와 영양을 위한 좋은 결정을 내리는 일을
+            어렵게 만듭니다.</p>
         </div>
       </section>
       <!-- menual -->
       <section id="menual" class="main-section">
         <div class="container">
           <h2 class="section-heading">menual</h2>
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+          <h3>You can do it just by following the menual.</h3>
           <ul class="menual-info">
             <div class="menual-section">
               <span class="fa-stack fa-1x">
@@ -105,16 +112,6 @@
                 <i class="fa-solid fa-square fa-stack-2x"></i>
                 <i class="fa-solid fa-3 fa-stack-1x fa-inverse"></i>
               </span>
-              <li>식단 형태
-                <p>- 원하는 식단의 유형을 선택해주세요</p>
-                <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
-              </li>
-            </div>
-            <div class="menual-section">
-              <span class="fa-stack fa-1x">
-                <i class="fa-solid fa-square fa-stack-2x"></i>
-                <i class="fa-solid fa-4 fa-stack-1x fa-inverse"></i>
-              </span>
               <li>칼로리 입력
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
               </li>
@@ -122,7 +119,7 @@
             <div class="menual-section">
               <span class="fa-stack fa-1x">
                 <i class="fa-solid fa-square fa-stack-2x"></i>
-                <i class="fa-solid fa-5 fa-stack-1x fa-inverse"></i>
+                <i class="fa-solid fa-4 fa-stack-1x fa-inverse"></i>
               </span>
               <li>특이사항 입력
                 <p>- 알레르기, 질병이 있는 경우 작성해 주세요</p>
@@ -133,27 +130,66 @@
         </div>
       </section>
       <!-- recommend -->
-        <section id="recommend" class="main-section">
-          <div class="container"></div>
-            <h2 class="section-heading">recommend</h2>
-              <div class="recommend-img">
-                <figure class="recommend-img-card">
-                  <img src="/img/99.28318404.1.jpg" alt="이미지 고민중">
-                  <figcaption>
-                    <strong>균형있는 식단을 실천해보아요</strong>
-                    <p>하루 7잔 이상의 물을 드셨나요?</p>
-                  </figcaption>
-                </figure>
-                <figure class="recommend-img-card">
-                  <img src="" alt="이미지 고민중">
-                  <figcaption>
-                    <strong>좋은 식습관을 위한 식단을 짜보아요</strong>
-                    <p>영양소가 골고루 들어간 식단인가요?</p>
-                  </figcaption>
-                </figure>
+      <section id="recommend" class="main-section">
+        <h2 class="section-heading">recommend</h2>
+        <div class="container">
+          <div class="recommend-img">
+            <div class="recommend-img-card">
+              <img src="" alt="이미지 고민중">
+              <div>
+                <strong>건강한 다이어트</strong>
+                <p>얼마나 알고 계신가요?</p>
               </div>
             </div>
-        </section>
+            <div class="recommend-img-card">
+              <img src="" alt="이미지 고민중">
+              <div>
+                <strong>건강한 체중증량</strong>
+                <p>얼마나 알고 계신가요?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 모달 팝업창 1 -->
+      <div id="myModal1" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-content-text1">
+            <h2>다이어트를 위한 식단 작성 시 TIP</h2>
+            <span class="fa-stack fa-1x">
+              <i class="fa-solid fa-square fa-stack-2x"></i>
+              <i class="fa-solid fa-1 fa-stack-1x fa-inverse"></i>
+            </span>
+            <div class="diet-modal-1">
+              <h3>체중 감량을 위한 기간 정하기</h3>
+              <p>- 목표점을 설정하여 의지를 높일 수 있음</p>
+              <p>- 반복적인 실패경험을 줄이고 성취도를 높일 수 있음</p>
+              <p>- 장기적 목표: '1년 동안 20kg을 감량하겠다'</p>
+              <p>- 단기적 목표: '한달에 2kg을 감량하겠다'</p>
+            </div>
+            <h3>인바디를 통한 체성분 고려하기</h3>
+            <p>- 개개인의 체성분이 다르기 때문에 인바디를 통한 취약점을 파악할 수 있음 </p>
+            <p>- 정보에 따른 알맞은 운동법, 식습관을 선택할 수 있음</p>
+            <h3>운동, 생활습관 병행하기</h3>
+            <p>- 소위 말하는 '요요현상'을 막기 위한 모니터링이 필요함</p>
+            <p>- 고강도 단시간 운동: 근력을 키우기 위함</p>
+            <p>- 저강도 단시간 운동: 체지방을 분해하기 위함</p>
+            <p>- 식사 후 눕지않기, 식사시간 정해놓기 등 생활습관을 만들어야 지속적인 관리가 가능함 </p>
+            <small></small>
+          </div>
+        </div>
+      </div>
+  
+  <!-- 모달 팝업창 2 -->
+  <div id="myModal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-content-text2">모달 팝업창에 나타낼 두 번째 내용을 입력하세요.</p>
+    </div>
+  </div>
+  
+
         <!-- chart -->
       <section id="chart" class="main-section">
         <h2 class="section-heading">chart</h2>
@@ -189,7 +225,7 @@
     <small>Copyright Mj Corp, All right reserved.</small>
     <small>무료 배경 사진 https://kor.pngtree.com/freebackground/summer-fruit-drink-scene-banner_1042012.html?sol=downref&id=bef</small>
   </footer>
-
+  <script src="js/popup.js"></script>
   </body>
   
 </html>

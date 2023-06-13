@@ -3,6 +3,9 @@
     --text-color: #f0f4f5;
     --background-color: rgb(114, 23, 183);
     --accent-color: rgba(65, 13, 124, 0.348);
+    --card-color: rgb(240, 245, 215);
+    --nav-color: rgba(236, 214, 241, 0.548);
+    --menual-color: rgba(240, 245, 215, 0.571);
 }
 body{
     margin: 2.5rem;
@@ -44,7 +47,7 @@ a{
 }
 
 .navbar-menu li:hover{
-    background-color: rgba(236, 214, 241, 0.548);
+    background-color: var(--nav-color);
     border-radius: 6px;
 }
 
@@ -62,7 +65,7 @@ a{
 .navbar-toggleBtn{
     display: none;
     position: absolute;
-    right: 32px;
+    right: 50px;
     font-size: 24px;
     color: rgba(65, 13, 124, 0.78);
 }
@@ -105,16 +108,16 @@ a{
     padding-top: 10rem;
     padding-bottom: 6rem;
     text-align: center;
-    background-attachment: scroll;
+    background-color: var(--card-color)
+    /* background-attachment: scroll;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(/img/ddd.jpg)
-
+    background-image: url(/img/ddd.jpg) */
 }
 
 .section-one-h2{
-    font-size: 80px;
+    font-size: 90px;
     font-family: 'Bagel Fat One', sans-serif;  
     color: var(--background-color)
 }
@@ -134,18 +137,24 @@ a{
 
 .main-section h2
 {font-family: 'Sriracha';
-    font-size: 2.5rem;
+    font-size: 4.5rem;
 }
 .main-section h3{
     font-family: 'Sriracha';
 }
 
+.main-section img {
+    width: 300px;
+    height: 200px;
+    align-items: center;
+}
 /* menual box */
 .menual-info{
     text-align: left;
     list-style: none;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .menual-info li{
@@ -154,29 +163,93 @@ a{
 }
 
 .menual-section{
-    border-color: #363b43;    border-style: solid;
+    border-color: #5c636e;
+    background-color: var(--menual-color);    
+    border-style: solid;
     border-radius: 8px;
     padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .menual-section.p{
     padding: 8px;
 }
 
-/* recommend box*/
-.recommend-img{ 
-    display: flex;
-    flex-direction: row;
+@media (max-width: 768px) {
+    .menual-section {
+      flex-basis: 100%; /* 화면이 작아질 경우 전체 폭을 차지하도록 설정합니다 */
+    }
 }
 
-.recommend-img-card{
-    border-style: solid;
-    border-color: #363b43;
-    border-radius: 9px;
-    flex: 1;
-    margin: 10px;
-    height: 200px;
+/* recommend box */
+.recommend-img {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+.recommend-img-card {
+    width: 500px;
+    height: 200px;
+    margin-bottom: 12px;
+    background-color: var(--nav-color);
+    border-style: solid;
+    border-color: #aaa;
+    border-radius: 9px;
+    cursor: pointer;
+    background-size: cover;
+    background-image: url(/img/diet.jpg);
+}
+
+.recommend-img-card:hover {
+    transform: scale( 1.1 )
+}
+
+@media (max-width: 768px) {
+    .recommend-img-card {
+      flex-basis: 100%; /* 화면이 작아질 경우 전체 폭을 차지하도록 설정합니다 */
+    }
+}
+
+/* recommend-modal */
+.modal {
+    font-family: 'Sriracha';
+    display: none; /* 모달 기본으로 숨김 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+background-color: var(--text-color);
+margin: 15% auto;
+padding: 20px;
+border: 1px solid #888;
+border-radius: 8px;
+width: 80%;
+}
+
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
 
 /* 테이블 출력 */
 .table {
