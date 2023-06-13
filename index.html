@@ -94,7 +94,7 @@
               </span>
               <li>식수일 입력
                 <p>- 원하는 식수일을 입력해주세요</p>
-                <p>- 최소 1일 이상 입력해 주시고 최대 7일까지 입력가능합니다 </p>
+                <p>- 최소 1일 이상 입력/최대 7일까지 입력가능합니다 </p>
               </li>
             </div>
             <div class="menual-section">
@@ -113,7 +113,9 @@
                 <i class="fa-solid fa-3 fa-stack-1x fa-inverse"></i>
               </span>
               <li>칼로리 입력
+                <p>- 한끼 섭취하고 싶은 칼로리를 입력해주세요</p>
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
+                <small>* 예시) 500~700</small>
               </li>
             </div>
             <div class="menual-section">
@@ -194,30 +196,40 @@
       <section id="chart" class="main-section">
         <h2 class="section-heading">chart</h2>
         <h3>본격적인 식단 작성</h3>
+        <div class="form-info">
+          <form class="form-chart">
+            <div class="form-chart-menu">
+              <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" max="30" />
+            </div>
+            <div class="form-chart-menu">
+              <select id="mealType" required>
+                <option value="">아침/점심/저녁 선택</option>
+                <option value="아침">아침</option>
+                <option value="점심">점심</option>
+                <option value="저녁">저녁</option>
+              </select>
+            </div>
+            <div class="form-chart-menu">
+              <select id="mealType2" required>
+                <option value="">선택식</option>
+                <option value="다이어트">다이어트</option>
+                <option value="체중증가">체중증가</option>
+                <option value="균형">균형</option>
+              </select>
+            </div>
+            <div class="form-chart-menu">
+              <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
+            </div>
+            <div class="form-chart-menu">
+              <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus />
+            </div>
+            <button class="btn1" type="submit">전송</button>
+          </form>
+          <div id="answerTableContainer" class="answerTableContainer"></div>
+        </div>
       </section>
-    </main>
-    <div class="form-info">
-      <form class="">
-        <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" max="30" />
-        <select id="mealType" required>
-          <option value="">아침/점심/저녁 선택</option>
-          <option value="아침">아침</option>
-          <option value="점심">점심</option>
-          <option value="저녁">저녁</option>
-        </select>
-        <select id="mealType2" required>
-          <option value="">선택식</option>
-          <option value="다이어트">다이어트</option>
-          <option value="체중증가">체중증가</option>
-          <option value="균형">균형</option>
-        </select>
-        <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
-        <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus  />
-        <button class="btn1" type="submit">전송</button>
-      </form>
-      <div id="answerTableContainer"></div>
-    </div>
-  <footer>
+  </main>
+  <footer class="footer">
     <address>
       <a href="mailto: newzerto8@naver.com">newzerto8@naver.com</a>
       <a href="tel:+8201012347895">010-1234-7895</a>
