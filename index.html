@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>chat</title>
+    <title>mealplan</title>
     <!-- costum css -->
-    <link rel="stylesheet" href="css/001.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
@@ -14,15 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
   </head>
+  <!-- icon -->
   <script src="https://kit.fontawesome.com/24d170106e.js" crossorigin="anonymous"></script>
-  <!-- javaScript -->
-  <script src="js/api.js" type="module"></script>
-  <script src="js/func.js" type="module"></script>
-  <script src="js/main.js" type="module"></script> 
-  
-  <script src="js/nav.js" defer></script>
-  <script src="js/icon.js"></script>
-  
+
   <body>
     <!-- navigation -->
     <nav class="navbar" >
@@ -51,7 +46,7 @@
             <i class="fa-solid fa-burger"></i>
           </a>      
     </nav>
-  <!-- header -->
+    <!-- header -->
     <header>
       <section class="section-one">
         <div class="container">
@@ -68,7 +63,7 @@
         </div>
       </section>
     </header>
-  <!-- main -->
+    <!-- main -->
     <main>
       <section id="history" class="main-section">
         <div class="container">
@@ -88,47 +83,47 @@
           <h2 class="section-heading">menual</h2>
           <h3>You can do it just by following the menual.</h3>
           <ul class="menual-info">
-            <div class="menual-section">
+            <li>
+              <div class="menual-section">
               <span class="fa-stack fa-1x">
                 <i class="fa-solid fa-square fa-stack-2x"></i>
                 <i class="fa-solid fa-1 fa-stack-1x fa-inverse"></i>
-              </span>
-              <li>식수일 입력
+              </span>식수일 입력
                 <p>- 원하는 식수일을 입력해주세요</p>
                 <p>- 최소 1일 /최대 30일까지 입력가능합니다 </p>
-              </li>
-            </div>
-            <div class="menual-section">
+              </div>
+            </li>
+            <li>
+              <div class="menual-section">
               <span class="fa-stack fa-1x">
                 <i class="fa-solid fa-square fa-stack-2x"></i>
                 <i class="fa-solid fa-2 fa-stack-1x fa-inverse"></i>
-              </span>
-              <li>아침/점심/저녁 설정
+              </span>아침/점심/저녁 설정
                 <p>- 원하는 시간대의 식사를 선택해주세요</p>
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
-              </li>
-            </div>
-            <div class="menual-section">
+              </div>
+            </li>
+            <li>
+              <div class="menual-section">
               <span class="fa-stack fa-1x">
                 <i class="fa-solid fa-square fa-stack-2x"></i>
                 <i class="fa-solid fa-3 fa-stack-1x fa-inverse"></i>
-              </span>
-              <li>칼로리 입력
+              </span>칼로리 입력
                 <p>- 한끼 섭취하고 싶은 칼로리를 입력해주세요</p>
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
                 <small>* 예시) 500~700</small>
-              </li>
-            </div>
-            <div class="menual-section">
+              </div>
+            </li>
+            <li>
+              <div class="menual-section">
               <span class="fa-stack fa-1x">
                 <i class="fa-solid fa-square fa-stack-2x"></i>
                 <i class="fa-solid fa-4 fa-stack-1x fa-inverse"></i>
-              </span>
-              <li>특이사항 입력
+              </span>특이사항 입력
                 <p>- 알레르기, 질병이 있는 경우 작성해 주세요</p>
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
-              </li>
-            </div>
+              </div>
+            </li>
           </ul>
         </div>
       </section>
@@ -160,7 +155,6 @@
           <span class="close">&times;</span>
           <div class="modal-content-text1">
             <h2>다이어트를 위한 식단 작성 시 TIP</h2>
-            <div class="diet-modal-1">
               <h3>체중 감량을 위한 기간 정하기</h3>
               <p>- 목표점을 설정하여 의지를 높일 수 있음</p>
               <p>- 반복적인 실패경험을 줄이고 성취도를 높일 수 있음</p>
@@ -175,7 +169,6 @@
               <p>- 저강도 단시간 운동: 체지방을 분해하기 위함</p>
               <p>- 식사 후 눕지않기, 식사시간 정해놓기 등 생활습관을 만들어야 지속적인 관리가 가능함 </p>
               <small></small>
-            </div>
           </div>
         </div>
       </div>
@@ -192,31 +185,33 @@
         <h3>Let's do it</h3>
         <div class="form-info">
           <form class="form-chart">
-            <div class="form-chart-menu">
-              <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" max="30" />
-            </div>
-            <div class="form-chart-menu">
-              <select id="mealType" required>
-                <option value="">아침/점심/저녁 선택</option>
-                <option value="아침">아침</option>
-                <option value="점심">점심</option>
-                <option value="저녁">저녁</option>
-              </select>
-            </div>
-            <div class="form-chart-menu">
-              <select id="mealType2" required>
-                <option value="">선택식</option>
-                <option value="다이어트">다이어트</option>
-                <option value="체중증가">체중증가</option>
-                <option value="균형">균형</option>
-              </select>
-            </div>
-            <div class="form-chart-menu">
-              <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
-            </div>
-            <div class="form-chart-menu">
-              <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus />
-            </div>
+            <ul class="form-chart-menu">
+              <li class="form-chart-menu1">
+                <input type="number" id="days" placeholder="식단 일수 입력" autofocus required min="1" max="30" />
+              </li>
+              <li class="form-chart-menu2">
+                <select id="mealType" required>
+                  <option value="">아침/점심/저녁 선택</option>
+                  <option value="아침">아침</option>
+                  <option value="점심">점심</option>
+                  <option value="저녁">저녁</option>
+                </select>
+              </li>
+              <li class="form-chart-menu3">
+                <select id="mealType2" required>
+                  <option value="">선택식</option>
+                  <option value="다이어트">다이어트</option>
+                  <option value="체중증가">체중증가</option>
+                  <option value="균형">균형</option>
+                </select>
+              </li>
+              <li class="form-chart-menu4">
+                <input type="text" id="kcal" placeholder="칼로리 입력" autofocus  />
+              </li>
+              <li class="form-chart-menu5">
+                <input type="text" id="sign" placeholder="특이사항을 입력하세요" autofocus />
+              </li>
+            </ul>
             <button class="btn1" type="submit">전송</button>
           </form>
           <div id="answerTableContainer" class="answerTableContainer"></div>
@@ -228,9 +223,15 @@
     <address>
       <a href="mailto: newzerto8@naver.com">newzerto8@naver.com</a>
     </address>
-    <small>Copyright Mj Corp, All right reserved.</small>
-    <small>무료 배경 사진 https://kor.pngtree.com/freebackground/summer-fruit-drink-scene-banner_1042012.html?sol=downref&id=bef</small>
+    <p class="copyright">Copyright Mj Corp, All right reserved.</p>
+    <a href="https://kor.pngtree.com/freebackground/summer-fruit-drink-scene-banner_1042012.html?sol=downref&id=bef"><p>무료 배경 사진</p></a>
   </footer>
+  <!-- javaScript -->
+  <script src="js/api.js" type="module"></script>
+  <script src="js/func.js" type="module"></script>
+  <script src="js/main.js" type="module"></script> 
+  <script src="js/nav.js" ></script>
+  <script src="js/icon.js"></script>
   <script src="js/popup.js"></script>
   </body>
 </html>
