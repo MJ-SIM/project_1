@@ -202,7 +202,7 @@ a{
     border-radius: 9px;
     cursor: pointer;
     background-size: cover;
-    background-image: url("./img/diet.jpg");
+    background-image: url(./img/diet.jpg);
 }
 
 .recommend-img-card:hover {
