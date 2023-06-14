@@ -1,8 +1,8 @@
 // 모달 팝업창 요소들을 가져옴
-var modal1 = document.getElementById("myModal1");
-var modal2 = document.getElementById("myModal2");
-var span1 = document.getElementsByClassName("close")[0];
-var span2 = document.getElementsByClassName("close")[1];
+const modal1 = document.getElementById("myModal1");
+const modal2 = document.getElementById("myModal2");
+const span1 = document.getElementsByClassName("close")[0];
+const span2 = document.getElementsByClassName("close")[1];
 const cards = document.getElementsByClassName("recommend-img-card");
 
 
