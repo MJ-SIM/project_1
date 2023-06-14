@@ -4,10 +4,9 @@ const $answerTableContainer = document.querySelector("#answerTableContainer");
     const printAnswer =(answer)=>{
         answer = answer.replace(/\([^)]*\)/g, ''); 
         // 괄호와 그 안의 내용을 제거
-        let li = document.createElement("li");
+        const li = document.createElement("li");
         li.classList.add("answer");
         li.innerText = answer;
-        
         
         // 답변을 테이블 형태로 출력
         const mealData = answer.split("\n");
@@ -54,14 +53,14 @@ const $answerTableContainer = document.querySelector("#answerTableContainer");
     //로딩중 화면 함수
     function LoadingWithMask() {
     // 화면의 높이와 너비를 구합니다.
-        var maskHeight = Math.max(
+        const maskHeight = Math.max(
         document.body.scrollHeight,
         document.documentElement.scrollHeight,
         document.body.offsetHeight,
         document.documentElement.offsetHeight,
         document.documentElement.clientHeight
         );
-        var maskWidth = Math.max(
+        const maskWidth = Math.max(
         document.body.scrollWidth,
         document.documentElement.scrollWidth,
         document.body.offsetWidth,
@@ -70,7 +69,7 @@ const $answerTableContainer = document.querySelector("#answerTableContainer");
         );
     
         // 화면에 출력할 마스크를 설정해줍니다.
-        var mask = document.createElement('div');
+        const mask = document.createElement('div');
         mask.id = 'mask';
         mask.style.position = 'absolute';
         mask.style.zIndex = '9000';
@@ -79,12 +78,12 @@ const $answerTableContainer = document.querySelector("#answerTableContainer");
         mask.style.left = '0';
         mask.style.top = '0';
     
-        var loadingImg = document.createElement('div');
+        const loadingImg = document.createElement('div');
         loadingImg.id = 'loadingImg';
         loadingImg.innerHTML =
-        "<img src='img/LoadingImg.gif' style='position: relative; display: block; margin: 0px auto;'/>";
+        "<img src='gif/LoadingImg.gif' style='position: relative; display: block; margin: 0px auto;'/>";
     
-        var loadingTxt = document.createElement('div');loadingTxt.id = 'loadingTxt';
+        const loadingTxt = document.createElement('div');loadingTxt.id = 'loadingTxt';
         loadingTxt.innerHTML='입력하신 정보로 식단을 작성중 입니다';
         loadingTxt.style.color = 'gray'
         loadingTxt.style.fontSize = '20px'
@@ -110,9 +109,9 @@ const $answerTableContainer = document.querySelector("#answerTableContainer");
     
     //로딩종료 함수
     function closeLoadingWithMask() {
-        var mask = document.getElementById('mask');
-        var loadingImg = document.getElementById('loadingImg');
-        var loadingTxt = document.getElementById('loadingTxt');
+        const mask = document.getElementById('mask');
+        const loadingImg = document.getElementById('loadingImg');
+        const loadingTxt = document.getElementById('loadingTxt');
         if (mask && loadingImg && loadingTxt) {
             mask.style.display = 'none';
             loadingImg.style.display = 'none';

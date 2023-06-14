@@ -1,3 +1,4 @@
+// 반응형 토글
 const toggleBtn=document.querySelector('.navbar-toggleBtn');
 const menu=document.querySelector('.navbar-menu')
 const icons=document.querySelector('.navbar-icons')

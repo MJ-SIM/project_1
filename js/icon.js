@@ -1,3 +1,4 @@
+// 아이콘 클릭 시 링크 이동
 document.addEventListener("DOMContentLoaded", function() {
     var myIcon1 = document.getElementById("myIcon1");
     var myIcon2 = document.getElementById("myIcon2");

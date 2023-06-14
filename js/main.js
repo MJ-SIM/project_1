@@ -1,9 +1,7 @@
-
 import{apiPost, url} from "./api.js"
 import{printAnswer, LoadingWithMask, closeLoadingWithMask } from "./func.js"
 
 window.onload = function(){
-
     const $form = document.querySelector("form");
     const $daysInput = document.querySelector("#days");
     const $mealTypeSelect = document.querySelector("#mealType");
@@ -11,9 +9,6 @@ window.onload = function(){
     const $kcalInput = document.querySelector("#kcal");
     const $signInput = document.querySelector('#sign')
     
-
-
-
     // 사용자의 질문
     let question;
 

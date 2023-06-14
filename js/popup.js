@@ -3,7 +3,8 @@ var modal1 = document.getElementById("myModal1");
 var modal2 = document.getElementById("myModal2");
 var span1 = document.getElementsByClassName("close")[0];
 var span2 = document.getElementsByClassName("close")[1];
-var cards = document.getElementsByClassName("recommend-img-card");
+const cards = document.getElementsByClassName("recommend-img-card");
+
 
 // 첫 번째 카드를 클릭했을 때 첫 번째 모달 팝업창을 보여줌
 cards[0].addEventListener("click", function() {
