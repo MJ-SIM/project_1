@@ -33,7 +33,12 @@ a{
 }
 
 .navbar-logo i{
-    color: var(--background-color)
+    color: #f0f4f5;
+}
+
+.navbar-logo a{
+    color: rgba(65, 105, 225, 0.725);
+    text-shadow: 1px 1px 2px rgb(11, 11, 11);
 }
 
 .navbar-menu{
@@ -66,10 +71,9 @@ a{
 .navbar-toggleBtn{
     display: none;
     position: absolute;
-    right: 50px;
+    right: 70px;
     font-size: 24px;
-    color: rgba(65, 13, 124, 0.78);
-    color: ind;
+    color: #f0f4f5;
 }
 
 /* 반응형 navbar */
