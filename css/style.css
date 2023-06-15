@@ -7,9 +7,10 @@
     --nav-color: rgba(236, 214, 241, 0.548);
     --menual-color: rgba(240, 245, 215, 0.571);
 }
+
 body{
     margin: 3.5rem;
-    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Black Han Sans', sans-serif;scroll-behavior: smooth;
 }
 a{
     text-decoration: none;
@@ -180,7 +181,7 @@ a{
     background-image: url(/img/ddd.jpg) */
 /* } */
 
-.section-one-h2{
+.section-one-h{
     font-size: 120px;
     font-family: 'Bagel Fat One', sans-serif;  
     color: rgb(51, 85, 188);

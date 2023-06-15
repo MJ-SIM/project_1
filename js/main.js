@@ -71,4 +71,5 @@ window.onload = function(){
             apiPost(data)
         }
     });
+    window.scrollTo(0, 0); //화면 첫페이지부터 스크롤
 }
