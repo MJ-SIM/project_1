@@ -1,20 +1,15 @@
-// 아이콘 클릭 시 링크 이동
 document.addEventListener("DOMContentLoaded", function() {
-    const myIcon1 = document.getElementById("myIcon1");
-    const myIcon2 = document.getElementById("myIcon2");
-  
-    if (myIcon1) {
-      myIcon1.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "https://blog.naver.com/newzerto8";
-      });
-    }
-  
-    if (myIcon2) {
-      myIcon2.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "https://www.instagram.com/newzerto8/";
-      });
-    }
+  // form 요소 선택
+  var form = document.querySelector(".form-chart");
+
+  // form 제출 이벤트 리스너 등록
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // 기본 제출 동작 방지
+
+    // .answerTableContainer 요소 선택
+    var answerTableContainer = document.querySelector(".answerTableContainer");
+
+    // .answerTableContainer 요소를 보이도록 변경
+    answerTableContainer.style.display = "block";
   });
-  
+});

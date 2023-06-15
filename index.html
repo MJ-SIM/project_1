@@ -14,10 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <script src="js/icon.js"></script>
   </head>
   <!-- icon -->
   <script src="https://kit.fontawesome.com/24d170106e.js" crossorigin="anonymous"></script>
-
+  
   <body>
     <!-- navigation -->
     <nav class="navbar" >
@@ -32,14 +33,15 @@
         <li><a class="menu-link" href="#chart">chart</a></li>
       </ul>
       <ul class="navbar-icons">
-        <li>
-          <label for="inp-search">검색어 입력</label>
-          <input id="inp-search" type="search">
-          <button>검색어 찾기</button>
+        <!-- <li>
+          <label for="searchInput">검색어 입력</label>
+          <input id="searchInput" type="text">
+          <button onclick="searchText()" >검색어 찾기</button>
+          <p id="content"></p>
+        </li> -->
+        <li><a href="https://blog.naver.com/newzerto8" id="myIcon1"><i class="fab fa-blogger" style="color: #eddff1;"></i></a>
         </li>
-        <li><a href="#" id="myIcon1"><i class="fab fa-blogger" style="color: #eddff1;"></i></a>
-        </li>
-        <li><a href="#" id="myIcon2"><i class="fab fa-instagram" style="color: #f1dcf9;"></i></a>
+        <li><a href="https://www.instagram.com/newzerto8/" id="myIcon2"><i class="fab fa-instagram" style="color: #f1dcf9;"></i></a>
         </li>
       </ul>
           <a href="#" class="navbar-toggleBtn">
@@ -50,25 +52,95 @@
     <header>
       <section class="section-one">
         <div class="container">
-          <h2 class="section-one-h2">Meal Planner</h2>
-          <h3><strong>hello :) mj project</strong></h3>
-          <p>Are you ready to start a healthy meal plan?</p>
-          <p>I'll be your meal planner.</p>
-          <!-- <button type="button">회원가입</button>
-          <button type="button">로그인</button>
-          <aside>
-            <a href="https://m.blog.naver.com/kyungm2001/221718705226">블로그 방문하기</a>
-            <a href="">인스타그램 방문하기</a>
-          </aside> -->
+          <div class="hero">
+            <div class="snow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice">
+                <g fill="#4b0082" fill-opacity=".15" transform="translate(55 42)">
+                  <g id="snow-bottom-layer">
+                    <ellipse cx="6" cy="1009.5" rx="6" ry="5.5"/>
+                    <ellipse cx="138" cy="1110.5" rx="6" ry="5.5"/>
+                    <ellipse cx="398" cy="1055.5" rx="6" ry="5.5"/>
+                    <ellipse cx="719" cy="1284.5" rx="6" ry="5.5"/>
+                    <ellipse cx="760" cy="1155.5" rx="6" ry="5.5"/>
+                    <ellipse cx="635" cy="1459.5" rx="6" ry="5.5"/>
+                    <ellipse cx="478" cy="1335.5" rx="6" ry="5.5"/>
+                    <ellipse cx="322" cy="1414.5" rx="6" ry="5.5"/>
+                    <ellipse cx="247" cy="1234.5" rx="6" ry="5.5"/>
+                    <ellipse cx="154" cy="1425.5" rx="6" ry="5.5"/>
+                    <ellipse cx="731" cy="773.5" rx="6" ry="5.5"/>
+                    <ellipse cx="599" cy="874.5" rx="6" ry="5.5"/>
+                    <ellipse cx="339" cy="819.5" rx="6" ry="5.5"/>
+                    <ellipse cx="239" cy="1004.5" rx="6" ry="5.5"/>
+                    <ellipse cx="113" cy="863.5" rx="6" ry="5.5"/>
+                    <ellipse cx="102" cy="1223.5" rx="6" ry="5.5"/>
+                    <ellipse cx="395" cy="1155.5" rx="6" ry="5.5"/>
+                    <ellipse cx="826" cy="943.5" rx="6" ry="5.5"/>
+                    <ellipse cx="626" cy="1054.5" rx="6" ry="5.5"/>
+                    <ellipse cx="887" cy="1366.5" rx="6" ry="5.5"/>
+                    <ellipse cx="6" cy="241.5" rx="6" ry="5.5"/>
+                    <ellipse cx="138" cy="342.5" rx="6" ry="5.5"/>
+                    <ellipse cx="398" cy="287.5" rx="6" ry="5.5"/>
+                    <ellipse cx="719" cy="516.5" rx="6" ry="5.5"/>
+                    <ellipse cx="760" cy="387.5" rx="6" ry="5.5"/>
+                    <ellipse cx="635" cy="691.5" rx="6" ry="5.5"/>
+                    <ellipse cx="478" cy="567.5" rx="6" ry="5.5"/>
+                    <ellipse cx="322" cy="646.5" rx="6" ry="5.5"/>
+                    <ellipse cx="247" cy="466.5" rx="6" ry="5.5"/>
+                    <ellipse cx="154" cy="657.5" rx="6" ry="5.5"/>
+                    <ellipse cx="731" cy="5.5" rx="6" ry="5.5"/>
+                    <ellipse cx="599" cy="106.5" rx="6" ry="5.5"/>
+                    <ellipse cx="339" cy="51.5" rx="6" ry="5.5"/>
+                    <ellipse cx="239" cy="236.5" rx="6" ry="5.5"/>
+                    <ellipse cx="113" cy="95.5" rx="6" ry="5.5"/>
+                    <ellipse cx="102" cy="455.5" rx="6" ry="5.5"/>
+                    <ellipse cx="395" cy="387.5" rx="6" ry="5.5"/>
+                    <ellipse cx="826" cy="175.5" rx="6" ry="5.5"/>
+                    <ellipse cx="626" cy="286.5" rx="6" ry="5.5"/>
+                    <ellipse cx="887" cy="598.5" rx="6" ry="5.5"/>
+                  </g>
+                </g>
+                <g fill="#FFF" fill-opacity=".3" transform="translate(65 63)">
+                  <g id="snow-top-layer">
+                    <circle cx="8" cy="776" r="8"/>
+                    <circle cx="189" cy="925" r="8"/>
+                    <circle cx="548" cy="844" r="8"/>
+                    <circle cx="685" cy="1115" r="8"/>
+                    <circle cx="858" cy="909" r="8"/>
+                    <circle cx="874" cy="1438" r="8" transform="rotate(180 874 1438)"/>
+                    <circle cx="657" cy="1256" r="8" transform="rotate(180 657 1256)"/>
+                    <circle cx="443" cy="1372" r="8" transform="rotate(180 443 1372)"/>
+                    <circle cx="339" cy="1107" r="8" transform="rotate(180 339 1107)"/>
+                    <circle cx="24" cy="1305" r="8" transform="rotate(180 24 1305)"/>
+                    <circle cx="8" cy="8" r="8"/>
+                    <circle cx="189" cy="157" r="8"/>
+                    <circle cx="548" cy="76" r="8"/>
+                    <circle cx="685" cy="347" r="8"/>
+                    <circle cx="858" cy="141" r="8"/>
+                    <circle cx="874" cy="670" r="8" transform="rotate(180 874 670)"/>
+                    <circle cx="657" cy="488" r="8" transform="rotate(180 657 488)"/>
+                    <circle cx="443" cy="604" r="8" transform="rotate(180 443 604)"/>
+                    <circle cx="339" cy="339" r="8" transform="rotate(180 339 339)"/>
+                    <circle cx="24" cy="537" r="8" transform="rotate(180 24 537)"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="hero__content">
+              <h2 class="section-one-h2">Meal Planner</h2>
+              <p class="subTitle"><strong>hello :) mj project</strong></p>
+              <p class="subTitle2">Are you ready to start a healthy meal plan?</p>
+              <p class="subTitle2">I'll be your meal planner.</p>
+            </div>
+          </div>
         </div>
       </section>
     </header>
     <!-- main -->
-    <main>
+    <main class="main">
       <section id="history" class="main-section">
         <div class="container">
             <h2>history</h2>
-            <h3 class="section-subheading">Why is a healthy meal plan important?</h3>
+            <p class="section-subheading">Why is a healthy meal plan important?</p>
             <img src="./img/foodDish.png" alt="foodDish">
             <p>건강한 식사는 모든 연령대의 사람에게 중요합니다. 어린이와 청소년은
             성장과 신체발달을 위해 좋은 영양소를 섭취해야 합니다. 성인 역시 생애
@@ -81,7 +153,7 @@
       <section id="menual" class="main-section">
         <div class="container">
           <h2 class="section-heading">menual</h2>
-          <h3>You can do it just by following the menual.</h3>
+          <p class="section-subheading" >You can do it just by following the menual.</p>
           <ul class="menual-info">
             <li>
               <div class="menual-section">
@@ -111,7 +183,6 @@
               </span>칼로리 입력
                 <p>- 한끼 섭취하고 싶은 칼로리를 입력해주세요</p>
                 <p>- 이는 보다 정확한 식단작성을 도와줍니다</p>
-                <small>* 예시) 500~700</small>
               </div>
             </li>
             <li>
@@ -155,15 +226,21 @@
           <span class="close">&times;</span>
           <div class="modal-content-text1">
             <h2>다이어트를 위한 식단 작성 시 TIP</h2>
-              <h3>체중 감량을 위한 기간 정하기</h3>
+              <p>
+                <strong>체중 감량을 위한 기간 정하기</strong>
+              </p>
               <p>- 목표점을 설정하여 의지를 높일 수 있음</p>
               <p>- 반복적인 실패경험을 줄이고 성취도를 높일 수 있음</p>
               <p>- 장기적 목표: '1년 동안 20kg을 감량하겠다'</p>
               <p>- 단기적 목표: '한달에 2kg을 감량하겠다'</p>
-              <h3>인바디를 통한 체성분 고려하기</h3>
+              <p>
+                <strong>인바디를 통한 체성분 고려하기</strong>
+              </p>
               <p>- 개개인의 체성분이 다르기 때문에 인바디를 통한 취약점을 파악할 수 있음 </p>
               <p>- 정보에 따른 알맞은 운동법, 식습관을 선택할 수 있음</p>
-              <h3>운동, 생활습관 병행하기</h3>
+              <p>
+                <strong>운동, 생활습관 병행하기</strong>
+              </p>
               <p>- 소위 말하는 '요요현상'을 막기 위한 모니터링이 필요함</p>
               <p>- 고강도 단시간 운동: 근력을 키우기 위함</p>
               <p>- 저강도 단시간 운동: 체지방을 분해하기 위함</p>
@@ -182,7 +259,7 @@
       <!-- chart -->
       <section id="chart" class="main-section">
         <h2 class="section-heading">chart</h2>
-        <h3>Let's do it</h3>
+        <p class="section-subheading">Let's do it</p>
         <div class="form-info">
           <form class="form-chart">
             <ul class="form-chart-menu">
@@ -221,17 +298,17 @@
   <!-- footer -->
   <footer class="footer">
     <address>
-      <a href="mailto: newzerto8@naver.com">newzerto8@naver.com</a>
+      <a class="footerAdress" href="mailto: newzerto8@naver.com">newzerto8@naver.com</a>
     </address>
     <p class="copyright">Copyright Mj Corp, All right reserved.</p>
-    <a href="https://kor.pngtree.com/freebackground/summer-fruit-drink-scene-banner_1042012.html?sol=downref&id=bef"><p>무료 배경 사진</p></a>
+    <a class="footerAdress" href="https://kor.pngtree.com/freebackground/summer-fruit-drink-scene-banner_1042012.html?sol=downref&id=bef"><p>무료 배경 사진</p></a>
   </footer>
   <!-- javaScript -->
   <script src="js/api.js" type="module"></script>
   <script src="js/func.js" type="module"></script>
   <script src="js/main.js" type="module"></script> 
   <script src="js/nav.js" ></script>
-  <script src="js/icon.js"></script>
+  
   <script src="js/popup.js"></script>
   </body>
 </html>
