@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+
+# Auth user
+AUTH_USER_MODEL = 'user.User'
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chatbot',
     'rest_framework',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -110,11 +116,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_TZ = True
+
+LANGUAGES = [
+    ('kr', 'Korea'),
+    ('en', 'English')
+]
 
 
 # Static files (CSS, JavaScript, Images)

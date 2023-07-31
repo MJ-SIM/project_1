@@ -1,19 +1,23 @@
 # chatbot/views.py
-
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 from django.shortcuts import render
 from django.views import View
 from dotenv import load_dotenv
-import openai
+import openai as oa
 import os
+from .serializers import ConversationSerializer
 
 load_dotenv()
-openai.api_key = os.getenv('OPENAI_API_KEY')
+oa.api_key = os.getenv('OPENAI_API_KEY')
 
 
-class ChatbotView(View):
+class ChatbotView(APIView):
     def get(self, request, *args, **kwargs):
         conversations = request.session.get('conversations', [])
-        return render(request, 'chat.html', {'conversations': conversations})
+        serializer = ConversationSerializer(conversations, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         prompt = request.POST.get('prompt')
@@ -24,7 +28,7 @@ class ChatbotView(View):
             prompt_with_previous = f"{previous_conversations}\nUser: {prompt}\nAI:"
 
             model_engine = "text-davinci-003"
-            completions = openai.Completion.create(
+            completions = oa.Completion.create(
                 engine=model_engine,
                 prompt=prompt_with_previous,
                 max_tokens=1024,
@@ -37,7 +41,8 @@ class ChatbotView(View):
             conversation = {'prompt': prompt, 'response': response}
 
             # 대화 기록에 새로운 응답 추가
-            session_conversations.append(conversation)
-            request.session['conversations'] = session_conversations
+            serializer = ConversationSerializer(data=conversation)
+            if serializer.is_valid():
+                serializer.save()
 
-        return self.get(request, *args, **kwargs)
+        return Response({'message':'success'}, status=status.HTTP_200_OK )
