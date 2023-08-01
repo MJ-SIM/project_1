@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Profile
 from .forms import RegisterForm, LoginForm
-from .serializers import ProfileSerializer
+from .serializers import ProfileSerializer, UserSerializer
 
 # Create your views here.
 # user 관련된 기능
@@ -16,7 +16,7 @@ from .serializers import ProfileSerializer
 # 로그아웃
 
 ### Registration
-class Registration(View):
+class Registration(APIView):
     def get(self, request):
         if request.user.is_authenticated:
             return redirect('chatbot:chat')
@@ -30,17 +30,14 @@ class Registration(View):
         return render(request, 'user/user_register.html', context)
     
     def post(self, request):
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            return redirect('user:login')
-        context = {
-            'form': form
-        }
-        return render(request, 'user/user_register.html', context)
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            return Response({'status': 'success', 'message': '회원가입이 성공적으로 완료되었습니다.'}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 ### Login
-class Login(View):
+class Login(APIView):
     def get(self, request):
         if request.user.is_authenticated:
             return redirect('chatbot:chat')
@@ -76,10 +73,10 @@ class Login(View):
 
 
 ### Logout
-class Logout(View):
-    def get(self, request):
+class Logout(APIView):
+    def post(self, request):
         logout(request)
-        return redirect('chatbot:chat')
+        return Response({'status':'success', 'message':'로그아웃되었습니다.'}, status=status.HTTP_200_OK)
 
 
 ### Profile
