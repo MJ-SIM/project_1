@@ -13,6 +13,22 @@ load_dotenv()
 oa.api_key = os.getenv('OPENAI_API_KEY')
 
 
+class SendMessageView(APIView):
+    def post(self, request):
+        user_input = request.data.get('input_text')
+
+        if user_input is None:
+            return Response({'error': 'Invalid data. "input_text" is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # 여기에서 챗봇과 통신하고 응답을 받아온다면
+        # response = your_chatbot_function(user_input)
+
+        # 임시로 응답을 설정
+        response = "This is a response from Chatbot."
+
+        return Response({'generated_text': response}, status=status.HTTP_200_OK)
+
+
 class ChatbotView(APIView):
     def get(self, request, *args, **kwargs):
         conversations = request.session.get('conversations', [])

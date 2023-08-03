@@ -73,3 +73,51 @@ window.onload = function(){
     });
     window.scrollTo(0, 0); //화면 첫페이지부터 스크롤
 }
+
+// Function to display messages in the chat log
+function displayMessage(sender, message) {
+    const chatLog = document.getElementById('chat-log');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatLog.appendChild(messageElement);
+}
+
+// Function to send user input to Django backend
+async function sendMessage() {
+    const userInput = document.getElementById('user-input-text').value;
+
+    if (userInput.trim() === '') return;
+
+    // Display user message
+    displayMessage('User', userInput);
+
+    try {
+        // Send user input to Django backend
+        const response = await fetch('/api/send-message/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input_text: userInput }),
+        });
+
+        if (response.ok) {
+            // Get the JSON response from Django backend
+            const data = await response.json();
+
+            // Display the response from Django backend
+            displayMessage('Chatbot', data.generated_text);
+        } else {
+            console.error('Failed to get a response from the server');
+        }
+    } catch (error) {
+        console.error('Error sending request to the server:', error);
+    }
+
+    // Clear the user input field
+    document.getElementById('user-input-text').value = '';
+}
+
+// Attach sendMessage function to the "Send" button
+document.getElementById('send-button').addEventListener('click', sendMessage);

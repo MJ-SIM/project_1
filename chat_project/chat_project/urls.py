@@ -23,4 +23,6 @@ urlpatterns = [
     path('chatbot/', include('chatbot.urls')),
     path('user/', include('user.urls')),
     path('', views.IndexMain.as_view()),
+    path('api/send-message/', views.SendMessageView.as_view(), name='send-message'),
 ]
+
